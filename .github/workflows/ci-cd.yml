@@ -21,12 +21,23 @@ jobs:
       run: npm ci
     - name: Run unit tests
       run: npm run test:unit
-    - name: Install Playwright
-      run: npx playwright install
+  run-ui-tests:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm ci
     - name: Start the App
       run: npm start &
-    - name: Wait for the app to start
-      run: sleep 5
+    - name: Install Playwright
+      run: npx playwright install
     - name: Run UI tests
       run: npm run test:ui
   deploy-render:
