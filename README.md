@@ -1,0 +1,1 @@
+[![Build Test Deploy](https://github.com/svetlilaloli/exam-prep-shopping-list/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/svetlilaloli/exam-prep-shopping-list/actions/workflows/ci-cd.yml)
