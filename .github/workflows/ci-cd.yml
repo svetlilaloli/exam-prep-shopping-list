@@ -41,7 +41,7 @@ jobs:
     - name: Run UI tests
       run: npm run test:ui
   deploy-render:
-    needs: build-and-test
+    needs: run-ui-tests
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to render.com
